@@ -1,0 +1,55 @@
+.slider-wrapper {
+  padding: 0 $space-size-6;
+  position: relative;
+
+  .chevron {
+    display: inline-block;
+    border: 4px black;
+    // border: 4px map-get($map: $secondary, $key: 100);
+    border-style: none solid solid none;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 20%;
+    z-index: 900;
+    cursor: pointer;
+
+    &.left {
+      transform: rotate(140deg);
+      left: 1%;
+    }
+
+    &.right {
+      transform: rotate(-45deg);
+      right: 1%;
+    }
+  }
+}
+
+.slider {
+  display: flex;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: auto;
+  align-items: flex-start;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slide {
+    display: flex;
+    margin: 0 auto;
+    @include transition(margin 1s ease-in-out);
+  }
+}
+
+@include keyframes(slideshow) {
+  0% {
+    @include transform(translateX(0));
+  }
+  100% {
+    @include transform(translateX(-100%));
+  }
+}

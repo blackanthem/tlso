@@ -1,0 +1,82 @@
+$highlight-color: map-get(
+  $map: $secondary,
+  $key: 500,
+);
+
+#info {
+  background-color: map-get($map: $grey, $key: 800);
+  margin-top: -$space-size-10;
+  padding-top: $space-size-10;
+  z-index: -1;
+
+  .container {
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: $space-size-9;
+      }
+
+      span {
+        display: block;
+        margin-bottom: $space-size-2;
+      }
+    }
+
+    #contact {
+      background-color: transparent;
+      @include transition(background-color 2s ease-in-out);
+
+      &.highlight {
+        background-color: $highlight-color;
+      }
+    }
+
+    address {
+      text-align: center;
+      margin-bottom: $space-size-2;
+    }
+
+    i {
+      font-size: $font-size-10;
+      color: map-get($map: $primary, $key: 900);
+    }
+
+    h3 {
+      text-transform: capitalize;
+      margin-bottom: $space-size-1;
+    }
+
+    @include bp-large {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      max-width: 80%;
+      margin: 0 auto;
+
+      div {
+        margin: 0;
+        padding: 0 $space-size-4;
+        margin-bottom: $space-size-6 !important;
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+// @include keyframes(pulse) {
+//   0% {
+//     box-shadow: 0 0 0 0 $highlight-color;
+//   }
+//   70% {
+//     box-shadow: 0 0 0 10px $highlight-color;
+//   }
+//   100% {
+//     box-shadow: 0 0 0 0 $highlight-color;
+//   }
+// }

@@ -1,0 +1,55 @@
+nav {
+  position: fixed;
+  z-index: 5000;
+  top: 0px;
+  font-size: 0.7rem;
+  width: 100%;
+  @include transition(
+    background-color $duration ease-in,
+    font-size $duration ease-in
+  );
+  will-change: background-color font-size;
+
+  &.scrolled {
+    background-color: map-get($map: $primary, $key: 100);
+    font-size: 0.9rem;
+    color: map-get($map: $grey, $key: 900);
+
+    a {
+      padding-top: $space-size-4;
+    }
+
+    li:not(:last-child) {
+      position: relative;
+
+      // &::after {
+      //   position: absolute;
+      //   content: "";
+      //   height: 80%;
+      //   width: 1px;
+      //   right: 0;
+      //   top: 10%;
+      //   background-color: map-get($map: $primary, $key: 100);
+      // }
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+
+    li {
+      a {
+        text-transform: uppercase;
+        display: inline-block;
+        padding: $space-size-2 $space-size-5;
+        @include transition(padding-top $duration ease-in);
+        will-change: padding-top;
+      }
+
+      a:hover{
+          color: map-get($map: $secondary, $key: 100)
+      }
+    }
+  }
+}

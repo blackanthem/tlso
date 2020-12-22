@@ -1,0 +1,42 @@
+button {
+  @include transition(all $duration ease-in-out);
+  text-transform: capitalize;
+  min-width: 10ch;
+  font-size: 1rem;
+  font-weight: 600;
+
+  &:not(.tab) {
+    min-height: 44px;
+    border-radius: $border-radius;
+    padding: $space-size-2 $space-size-5;
+    border: 2px solid map-get($map: $primary, $key: 100);
+  }
+
+  &.primary {
+    background-color: map-get($map: $secondary, $key: 100);
+    border-color: map-get($map: $secondary, $key: 100);
+
+    &:active, &:hover {
+      background-color: transparent;
+      border-color: map-get($map: $primary, $key: 100);
+    }
+  }
+
+  &.tab {
+    border: 1px map-get($map: $primary, $key: 100);
+    color: map-get($map: $primary, $key: 900);
+    border-style: solid solid none solid;
+    margin-right: $space-size-2;
+    border-radius: $border-radius $border-radius 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.tab.active {
+      background-color: map-get($map: $primary, $key: 900);
+      color: map-get($map: $primary, $key: 100);
+      border: none;
+    }
+  }
+}

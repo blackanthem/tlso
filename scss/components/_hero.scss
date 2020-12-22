@@ -1,0 +1,81 @@
+#hero {
+  min-height: 85vh;
+  background: url("/img/the last stop over filtered.png") map-get($map: $primary, $key: 100) center;
+  color: map-get($map: $secondary, $key: 500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  h1 {
+    margin-bottom: $space-size-3;
+  }
+
+  h2 {
+    display: inline-block;
+    letter-spacing: $space-size-1;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: $space-size-3;
+    }
+  }
+
+  h1 + div {
+    margin-bottom: $space-size-10;
+  }
+
+  button {
+    color: map-get($map: $secondary, $key: 100);
+    border-color: map-get($map: $secondary, $key: 100);
+
+    &:hover {
+      background-color: map-get($map: $secondary, $key: 100);
+      color: map-get($map: $primary, $key: 100);
+    }
+  }
+
+  @include bp-medium {
+    h2 {
+      letter-spacing: $space-size-3;
+
+      &:not(:last-child) {
+        margin-right: $space-size-4;
+      }
+    }
+  }
+
+  @include bp-large {
+    h2 {
+      letter-spacing: $space-size-4;
+
+      &:not(:last-child) {
+        margin-right: $space-size-6;
+      }
+    }
+  }
+}
+
+#scroll-down a span {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  margin-left: -13px;
+  border: 3px map-get($map: $secondary, $key: 100);
+  border-style: none none solid solid;
+  @include transform(rotate(-45deg));
+  @include animation(sdb04 1.5s infinite);
+}
+
+@include keyframes(sdb04) {
+  0% {
+    @include transform(rotate(-45deg) translate(0, 0));
+  }
+  20% {
+    @include transform(rotate(-45deg) translate(-10px, 10px));
+  }
+  40% {
+    @include transform(rotate(-45deg) translate(0, 0));
+  }
+}

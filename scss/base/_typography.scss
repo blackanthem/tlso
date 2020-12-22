@@ -1,0 +1,92 @@
+h1,
+h2,
+h3,
+h4 {
+  //   letter-spacing: -0.03em;
+  font-family: "Oswald", sans-serif;
+  @include transition(font $duration ease-in-out);
+  font-weight: 400;
+}
+
+h1 {
+  letter-spacing: 0.05em;
+  font-size: $font-size-8;
+  font-weight: 400;
+  display: inline-block;
+  text-transform: uppercase;
+
+  @include bp-small {
+    font-size: $font-size-9;
+  }
+
+  @include bp-medium {
+    font-size: $font-size-10;
+  }
+
+  @include bp-large {
+    font-size: $font-size-12;
+  }
+}
+
+h2 {
+  font-size: $font-size-3;
+  text-transform: capitalize;
+  font-weight: 300;
+
+  @include bp-small {
+    font-size: $font-size-4;
+  }
+  @include bp-medium {
+    font-size: $font-size-5;
+  }
+  @include bp-large {
+    font-size: $font-size-6;
+  }
+}
+
+h3 {
+  font-size: $font-size-3;
+
+  @include bp-medium {
+    font-size: $font-size-4;
+    
+  }
+  @include bp-large{
+    font-size: $font-size-5;
+
+  }
+}
+
+h5 {
+  margin-bottom: $space-size-2;
+  font-size: $font-size-3;
+
+  @include bp-medium {
+    font-size: $font-size-4;
+  }
+}
+
+h3 {
+  font-size: $font-size-7;
+}
+
+.title {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.09em;
+    left: 0%;
+    background-color: map-get($map: $secondary, $key: 100);
+  }
+
+  &::after {
+    bottom: 0;
+  }
+  &::before {
+    top: 0;
+  }
+}

@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@300;400&display=swap");
+@import "libs/vars";
+@import "libs/breakpoints";
+@import "libs/mixins";
+
+@import "base/reset";
+@import "base/typography";
+@import "base/layout";
+
+@import "components/button";
+@import "components/icon";
+@import "components/carousel";
+@import "components/tabs";
+@import "components/hero";
+@import "components/footer";
+@import "components/info";
+@import "components/mood";
+@import "components/modal";
+@import "components/gallery";
+@import "components/menu";
+@import "components/nav";
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: map-get($map: $grey, $key: 900);
+  font-weight: 400;
+
+  &.lock-scroll {
+    height: 100vh;
+    overflow-y: hidden;
+
+    @include bp-medium {
+      padding-right: 16px;
+    }
+  }
+}
+
+section {
+  width: 100%;
+}
+
+// .anim {
+//   opacity: 0;
+//   will-change: opacity;
+//   @include transition(opacity 0.8s ease-in);
+
+//   &.is-visible {
+//     opacity: 1;
+//   }
+// }
