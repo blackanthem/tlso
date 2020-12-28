@@ -12,22 +12,22 @@
       <section id="hero">
         <nav>
           <ul>
-            <li><a href="/menu.html">menu</a></li>
-            <li><a href="#contact" id="highlight-contact">contact</a></li>
+            <li><a href="/menu.html">View menu</a></li>
+            <li><a   id="show-order">Place order</a></li>
+            <!-- <li><a href="#contact" id="highlight-contact">Place order</a></li> -->
           </ul>
         </nav>
-        <h1 class="title">the last stop over</h1>
-        <div>
-          <h2>pub</h2>
-          <h2>garden</h2>
-          <h2>restaurant</h2>
+        <h1>the last stop over</h1>
+        <div id="activate">
+          <h2>garden • pub • restaurant</h2>
         </div>
+
         <p id="scroll-down">
           <a href="#first-section"><span></span></a>
         </p>
       </section>
 
-      <section id="first-section" class="mood right">
+      <section class="mood right anim" id="first-section">
         <div class="overlay"></div>
         <div class="tag">
           <h3 class="title">relax in</h3>
@@ -35,12 +35,12 @@
         </div>
         <div class="img">
           <img
-            src="/img/the last stop over main area.jpg"
+            src="/img/the-last-stop-over-main-area.jpg"
             alt="the last stop over main area"
           />
         </div>
       </section>
-      <section class="mood left">
+      <section class="mood left anim">
         <div class="overlay"></div>
         <div class="tag">
           <h3 class="title">Catch up</h3>
@@ -48,12 +48,12 @@
         </div>
         <div class="img">
           <img
-            src="/img/people watching football at the last stop over.jpg"
+            src="/img/people-watching-football-at-the-last-stop-over.jpg"
             alt="people watching football at the last stop over"
           />
         </div>
       </section>
-      <section class="mood right">
+      <section class="mood right anim">
         <div class="overlay"></div>
         <div class="tag">
           <h3 class="title">eat some</h3>
@@ -61,12 +61,12 @@
         </div>
         <div class="img">
           <img
-            src="/img/plain rice and chicken.jpg"
+            src="/img/plain-rice-and-chicken.jpg"
             alt="plain rice and chicken"
           />
         </div>
       </section>
-      <section class="mood left">
+      <section class="mood left anim">
         <div class="overlay"></div>
         <div class="tag">
           <h3 class="title">meet up</h3>
@@ -74,43 +74,34 @@
         </div>
         <div class="img">
           <img
-            src="/img/people having a good time.jpg"
+            src="/img/people-having-a-good-time.jpg"
             alt="people having a good time"
           />
         </div>
       </section>
 
-      <!-- <section id="gallery">
-        <img class="anim" src="/img/gall-1.jpg" />
-        <img class="anim" src="/img/gall-2.jpg" />
-        <img class="anim" src="/img/gall-3.jpg" />
-        <img class="anim" src="/img/gall-4.jpg" />
-        <img class="anim" src="/img/gall-5.jpg" />
-        <img class="anim" src="/img/gall-6.jpg" />
-        <img class="anim" src="/img/gall-7.jpg" />
-        <img class="anim" src="/img/gall-8.jpg" />
-        <img class="anim" src="/img/gall-9.jpg" />
-        <img class="anim" src="/img/gall-10.jpg" />
-        <img class="anim" src="/img/gall-11.jpg" />
-      </section> -->
-
       <section id="info">
-        <div class="container">
+        <div class="container anim">
           <div>
             <i class="fas fa-clock"></i>
             <h3>opened</h3>
-            Everyday from 11am
+            Everyday from 8am
           </div>
           <div>
             <i class="fas fa-map-marker-alt"></i>
             <h3>Join Us</h3>
             <address>
-              F54 Damascus Close, Lashibi, <br />
-              Community 20 P.O Box GP 63 Accra, Ghana
+              At F54 Damascus Close, Lashibi, <br />
+              Community 20 P.O Box GP 63 Accra, Ghana <br />GT-076-6249
             </address>
-            <button class="primary" id="map-link">
+            <a
+              class="primary"
+              href="https://goo.gl/maps/pPGcQPTWTFSF1GNKA"
+              ,
+              target="_blank"
+            >
               Get Direction on Google Maps
-            </button>
+            </a>
           </div>
           <div id="contact">
             <i class="fas fa-phone-alt"></i>
@@ -130,10 +121,56 @@
       </section>
     </main>
     <footer>
-      <div id="copyright"><span>&copy;TLSO A Richkat Investment</span></div>
+      <div id="copyright"><span>&copy;TLSO A Richcat Investment</span></div>
     </footer>
     <div id="modal">
       <span>&times;</span>
+    </div>
+    <article id="order">
+      <span>&times;</span>
+      <div id="zz">
+        <header>
+          <h3>How to order</h3>
+        </header>
+        <ol>
+          <li>Click on the button to join The Last Stop Over WhatsApp group</li>
+          <li>Place order</li>
+          <ul>
+            <li>Send us your address and the food you want</li>
+        </ul>
+        <li>The food would be delivered in 30 mins</li>
+          <li>Pay on delivery</li>
+        </ol>
+        <a
+          href="https://chat.whatsapp.com/JArLAAXXXedIy2HolcIe9V"
+          class="primary"
+          >Join whatsApp Group</a
+        >
+      </div>
+    </article>
+    <div id="fab">
+      <div id="wa-link">
+        <a href="https://chat.whatsapp.com/JArLAAXXXedIy2HolcIe9V" id="wa-icon">
+          <svg
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="
+              width: 100%;
+              height: 100%;
+              fill: rgb(255, 255, 255);
+              stroke: none;
+            "
+          >
+            <path
+              d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"
+            ></path>
+          </svg>
+        </a>
+        <a href="https://chat.whatsapp.com/JArLAAXXXedIy2HolcIe9V" id="wa-text"
+          >Place order for delivery</a
+        >
+      </div>
     </div>
     <script src="/index.js"></script>
     <script

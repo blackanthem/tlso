@@ -1,0 +1,118 @@
+#order {
+  position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.9);
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  padding: $space-size-3;
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity;
+  @include transition(opacity 0.5s ease-in);
+
+  &.visible {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 7000;
+  }
+
+  span {
+    display: inline-block;
+    font-size: $font-size-10;
+    color: white;
+    position: absolute;
+    top: $space-size-4;
+    right: calc(#{$font-size-10} / 2);
+    cursor: pointer;
+  }
+  div {
+    margin: auto;
+    background-color: map-get($map: $grey, $key: 900);
+    padding: 0 $space-size-4 $space-size-4 $space-size-4;
+
+    header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    ol {
+      list-style-type: decimal;
+      margin: 0 0 $space-size-4 $space-size-4;
+
+      li:not(:last-child) {
+        // margin-bottom: $space-size-2;
+        line-height: 160%;
+      }
+
+      ul {
+        list-style-type: disc;
+        margin-left: $space-size-5;
+      }
+    }
+  }
+}
+
+#fab {
+  position: fixed;
+  bottom: $space-size-1;
+  right: $space-size-1;
+  font-size: $font-size-1;
+
+  #wa-link {
+    display: flex;
+
+    #wa-text {
+      align-self: center;
+      display: inline-block;
+      background-color: white;
+      padding: $space-size-1 $space-size-2 $space-size-1 $space-size-1;
+      border-radius: $space-size-1;
+      margin-right: $space-size-2;
+      position: relative;
+      order: 1;
+      opacity: 0;
+      will-change: opacity;
+      pointer-events: none;
+      @include transition(opacity $duration ease-in-out);
+      box-shadow: rgba(0, 0, 0, 0.1) 2px 2px 13px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: white;
+        right: -4px;
+        top: 50%;
+        margin-top: -4px;
+        width: 8px;
+        height: 8px;
+        transform: rotate(-45deg);
+      }
+    }
+
+    #wa-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 6px;
+      overflow: hidden;
+      display: block;
+      background: rgb(77, 194, 71);
+      padding: 5px;
+      order: 2;
+
+      &:hover,
+      &.active {
+        & + #wa-text {
+          opacity: 1;
+          // pointer-events: all;
+        }
+      }
+    }
+  }
+
+  @include bp-medium {
+    // font-size: $font-size-2;
+  }
+}

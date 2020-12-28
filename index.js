@@ -1,29 +1,72 @@
-document.getElementById("map-link").addEventListener("click", () => {
-  window.open("https://goo.gl/maps/pPGcQPTWTFSF1GNKA", "_blank");
-  return false;
-});
+const body = document.getElementsByTagName("body")[0];
+const lockBodyClass = "lock-scroll";
 
-const linkToHighlightContactDiv = document.getElementById("highlight-contact");
-
-linkToHighlightContactDiv.addEventListener("click", () => highlighContactDiv());
-
-function highlighContactDiv() {
-  const contactDiv = document.getElementById("contact");
-
-  contactDiv.classList.add("highlight");
-
+//WHATSAPP CTA
+const waIcon = document.getElementById("wa-icon");
+window.onload = () => {
   setTimeout(() => {
-    contactDiv.classList.remove("highlight");
-  }, 3000);
+    waIcon.classList.add("active");
+
+    setTimeout(() => {
+      waIcon.classList.remove("active");
+    }, 6000);
+  }, 4000);
+};
+
+// HOW TO ORDER MODAL
+const orderDiv = document.getElementById("order");
+orderDiv.addEventListener("click", closeHowToOrderModal);
+orderDiv
+  .getElementsByTagName("div")[0]
+  .addEventListener("click", (e) => e.stopPropagation());
+
+const showOrderDivLink = document.getElementById("show-order");
+showOrderDivLink.addEventListener("click", openHowToOrderModal);
+
+function openHowToOrderModal(event) {
+  orderDiv.classList.add("visible");
+  body.classList.add(lockBodyClass);
 }
 
+function closeHowToOrderModal(event) {
+  // if (event.target !== this) return;
+
+  orderDiv.classList.remove("visible");
+  body.classList.remove(lockBodyClass);
+}
+
+// APPEND NAV CLASS (SCROLLED) ON SCROLL
+const navElem = document.getElementsByTagName("nav")[0];
+const elementToChangeNavClass = document.getElementById("activate");
+const changeNavClassObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    entry.intersectionRatio > 0
+      ? navElem.classList.remove("scrolled")
+      : navElem.classList.add("scrolled");
+  });
+});
+changeNavClassObserver.observe(elementToChangeNavClass);
+
+// APPEND CLASS "IS-VISIBLE" TO ENTRY TARGETS
+const animObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > 0) entry.target.classList.add("is-visible");
+    });
+  },
+  {
+    rootMargin: "-70px",
+  }
+);
+const animElements = document.getElementsByClassName("anim");
+for (elem of animElements) animObserver.observe(elem);
+
+//SHOW IMAGE IN FULL SCREEN
 const imageTagList = document.getElementsByTagName("img");
 if (imageTagList)
   for (img of imageTagList) {
     img.addEventListener("click", showModal);
   }
-
-const body = document.getElementsByTagName("body")[0];
 
 const modalDiv = document.getElementById("modal");
 modalDiv.addEventListener("click", closeModal);
@@ -35,32 +78,26 @@ function showModal() {
   modalDiv.appendChild(modalImg);
 
   modalDiv.classList.toggle("visible");
-  body.classList.toggle("lock-scroll");
+  body.classList.toggle(lockBodyClass);
 }
 function closeModal() {
-  body.classList.toggle("lock-scroll");
+  body.classList.toggle(lockBodyClass);
   modalDiv.classList.toggle("visible");
-  modalDiv.getElementsByTagName("img")[0]?.remove();
+  setTimeout(() => {
+    modalDiv.getElementsByTagName("img")[0]?.remove();
+  }, 500);
 }
 
-const navElem = document.getElementsByTagName("nav")[0];
-const elementToChangeNavClass = document.getElementById("scroll-down");
-const changeNavClassObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    entry.intersectionRatio > 0
-      ? navElem.classList.remove("scrolled")
-      : navElem.classList.add("scrolled");
-  });
-});
-changeNavClassObserver.observe(elementToChangeNavClass);
+// HIGHLIGHT CONTACT DIV
+// const linkToHighlightContactDiv = document.getElementById("highlight-contact");
+// linkToHighlightContactDiv.addEventListener("click", () => highlighContactDiv());
 
-// const animImg = document.getElementsByClassName("anim");
-// const observer = new IntersectionObserver(
-//   (entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.intersectionRatio > 0) entry.target.classList.add("is-visible");
-//     });
-//   },
-//   { rootMargin: "-70px" }
-// );
-// for (let anim of animImg) observer.observe(anim);
+// function highlighContactDiv() {
+//   const contactDiv = document.getElementById("contact");
+
+//   contactDiv.classList.add("highlight");
+
+//   setTimeout(() => {
+//     contactDiv.classList.remove("highlight");
+//   }, 3000);
+// }

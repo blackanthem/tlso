@@ -8,17 +8,14 @@
 @import "base/layout";
 
 @import "components/button";
-@import "components/icon";
-@import "components/carousel";
-@import "components/tabs";
 @import "components/hero";
 @import "components/footer";
 @import "components/info";
 @import "components/mood";
 @import "components/modal";
-@import "components/gallery";
 @import "components/menu";
 @import "components/nav";
+@import "components/order";
 
 html {
   scroll-behavior: smooth;
@@ -40,16 +37,12 @@ body {
   }
 }
 
-section {
-  width: 100%;
+.anim {
+  opacity: 0;
+  will-change: opacity;
+  @include transition(opacity 0.8s ease-in);
+
+  &.is-visible {
+    opacity: 1;
+  }
 }
-
-// .anim {
-//   opacity: 0;
-//   will-change: opacity;
-//   @include transition(opacity 0.8s ease-in);
-
-//   &.is-visible {
-//     opacity: 1;
-//   }
-// }

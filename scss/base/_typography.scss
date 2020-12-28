@@ -11,6 +11,7 @@ h4 {
 h1 {
   letter-spacing: 0.05em;
   font-size: $font-size-8;
+  text-align: center;
   font-weight: 400;
   display: inline-block;
   text-transform: uppercase;
@@ -45,14 +46,14 @@ h2 {
 }
 
 h3 {
-  font-size: $font-size-3;
+  font-size: $font-size-8;
 
   @include bp-medium {
-    font-size: $font-size-4;
+    // font-size: $font-size-5;
     
   }
   @include bp-large{
-    font-size: $font-size-5;
+    // font-size: $font-size-9;
 
   }
 }
@@ -66,27 +67,24 @@ h5 {
   }
 }
 
-h3 {
-  font-size: $font-size-7;
-}
 
-.title {
-  position: relative;
+// .title {
+//   position: relative;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 0.09em;
-    left: 0%;
-    background-color: map-get($map: $secondary, $key: 100);
-  }
+//   &::before,
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     width: 100%;
+//     height: 0.09em;
+//     left: 0%;
+//     background-color: map-get($map: $secondary, $key: 100);
+//   }
 
-  &::after {
-    bottom: 0;
-  }
-  &::before {
-    top: 0;
-  }
-}
+//   &::after {
+//     bottom: 0;
+//   }
+//   &::before {
+//     top: 0;
+//   }
+// }

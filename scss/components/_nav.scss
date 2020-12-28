@@ -2,21 +2,24 @@ nav {
   position: fixed;
   z-index: 5000;
   top: 0px;
-  font-size: 0.7rem;
+  font-size: $font-size-1;
   width: 100%;
   @include transition(
     background-color $duration ease-in,
     font-size $duration ease-in
   );
-  will-change: background-color font-size;
+  will-change: background-color, font-size;
+  color: map-get($map: $secondary, $key: 900);
 
   &.scrolled {
     background-color: map-get($map: $primary, $key: 100);
-    font-size: 0.9rem;
+    font-size: $font-size-3;
     color: map-get($map: $grey, $key: 900);
+    box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 1);
 
     a {
       padding-top: $space-size-4;
+      
     }
 
     li:not(:last-child) {
@@ -40,16 +43,25 @@ nav {
 
     li {
       a {
-        text-transform: uppercase;
+        text-transform: capitalize;
         display: inline-block;
-        padding: $space-size-2 $space-size-5;
+        padding: $space-size-3 $space-size-5;
         @include transition(padding-top $duration ease-in);
         will-change: padding-top;
+        cursor: pointer;
       }
 
-      a:hover{
-          color: map-get($map: $secondary, $key: 100)
+      a:hover {
+        color: map-get($map: $secondary, $key: 100);
       }
+    }
+  }
+
+  @include bp-medium {
+    font-size: $font-size-3;
+
+    &.scrolled {
+      font-size: $font-size-4;
     }
   }
 }

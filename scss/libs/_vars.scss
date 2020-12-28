@@ -38,6 +38,7 @@ $primary: (
 );
 
 $secondary: (
+  50: #2d2e16,
   100: hsla(41, 100, 48, 1),
   500: hsla(41, 94, 80, 1),
   900: hsla(41, 69, 84, 1),
@@ -52,6 +53,5 @@ $grey: (
 
 $duration: 0.2s;
 $border-radius: 4px;
-
 
 $heading-font: "Oswald", sans-serif;

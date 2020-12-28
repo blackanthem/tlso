@@ -23,7 +23,7 @@ footer {
     }
   }
 
-  button:hover{
+  a:hover{
       background-color: map-get($map: $grey, $key: 900) !important;
   }
 
